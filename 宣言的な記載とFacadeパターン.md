@@ -24,7 +24,7 @@
 
 を記載することを意識する。  
 
-パターン①
+パターン①　（良くない例）Mainのメソッドに演算や分岐が乱立している。
 ```
 public string Service(payAmount){
 
@@ -42,7 +42,7 @@ public string Service(payAmount){
 }
 
 ```
-パターン②
+パターン②　（良い例）Mainのメソッドをシンプルにして、プライベート変数に処理を移譲している。
 ```
 public string Service(int payAmount){
 
@@ -50,7 +50,9 @@ public string Service(int payAmount){
     int newBalance = Payment(balance, payAmount);
     //画面表示のために、残高を表示するためのメッセージを返却する。
     return CreatePaymentMessage(newBalance);
+    
 }
+
 
 private int Payment(int balance, int payAmount){
     return balance - payAmount; 
