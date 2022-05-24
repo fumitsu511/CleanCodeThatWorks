@@ -48,6 +48,7 @@ public string Service(int payAmount){
 
     int balance = getBalance();
     int newBalance = Payment(balance, payAmount);
+    
     //画面表示のために、残高を表示するためのメッセージを返却する。
     return CreatePaymentMessage(newBalance);
     
